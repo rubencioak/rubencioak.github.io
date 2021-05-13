@@ -243,11 +243,11 @@ hr{border:0;border-top:3px solid #a3949d;margin:20px 0;height: 50px;}
 /* Color 1 - Main Links */
 /* Color 2 - Main Text */
 /* Color 3 - Background soft*/
-/* Color $ - Background hard */
-	.w3-text-color1,.w3-hover-text-color1:hover{color:#f2a365!important}
-	.w3-text-color2,.w3-hover-text-color2:hover{color:#ececec!important}
-	.w3-color3,.w3-hover-color3:hover{color:#fff!important;background-color:#30475e!important}
-	.w3-color4,.w3-hover-color4:hover{color:#fff!important;background-color:#222831!important}
+/* Color 4 - Background hard */
+	.w3-text-color1,.w3-hover-text-color1:hover{color:#17202A!important}
+	.w3-text-color2,.w3-hover-text-color2:hover{color:#2E4053!important}
+	.w3-color3,.w3-hover-color3:hover{color:#fff!important;background-color:#CD6155!important}
+	.w3-color4,.w3-hover-color4:hover{color:#fff!important;background-color:#E5E8E8!important}
 
 
 /* Links */
