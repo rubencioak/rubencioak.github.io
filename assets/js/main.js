@@ -258,5 +258,9 @@
 				});
 
 			});
+	
+			$("span.abstract-click").click(function(){
+				$(this).parentsUntil().children("p.abstract-text").slideToggle();
+			});
 
 })(jQuery);
