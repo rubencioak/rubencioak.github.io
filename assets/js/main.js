@@ -74,11 +74,11 @@
 			$sidebar_inner = $sidebar.children('.inner');
 
 		// Inactive by default on <= large.
-			breakpoints.on('<=large', function() {
+			breakpoints.on('<=medium', function() {
 				$sidebar.addClass('inactive');
 			});
 
-			breakpoints.on('>large', function() {
+			breakpoints.on('>medium', function() {
 				$sidebar.removeClass('inactive');
 			});
 
