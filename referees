@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<!-- **********************************  HEADER OF THE WEB PAGE *********************************** -->
+
+<head>
+    <!-- WEB TITLE -->
+    <title>Rubén Pérez-Sanz</title>
+    
+    <!-- BASE URL -->
+    <!--base href="https://rubencioak.github.io/" /-->
+    
+    <!-- DEFINES STYLE OF THE PAGE -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+    <!-- INDICATIONS FOR SEARCH ROBOTS: INDEX THE PAGE AND FOLLOW THE LINKS -->
+    <meta name="robots" content="index, follow" />
+    
+    <!-- LANGUAGE OF THE CONTENT IS ENGLISH -->
+    <meta http-equiv="content-language" content="en-us">
+        
+    <!-- KEYWORDS (TO RANGE HIGH IN SEARCHES) -->
+    <meta name="keywords" content="Ruben, Perez, Sanz, Perez-Sanz, UAB, universitat, barcelona, gse, BGSE, Collective, Bargaining, Agreements, Collective Bargaining, Labour, macroeconomics, econometrics, microeconometrics, research, economics, econo, personal, web">
+    
+    <!-- PAGE DESCRIPTION (FOR SEARCH ENGINES) -->
+	<meta name="description" content="This is the webpage of Ruben Perez-Sanz">
+	
+    <!-- PAGE AUTHOR (FOR SEARCH ENGINES) -->
+	<meta name="author" content="Rubén Pérez-Sanz">
+
+	<!--Google Verification-->
+	<meta name="google-site-verification" content="m6YM1HFcr-7NXCAMk7Z_n1mmtolOeY7KHON3be3mhsw" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-178653216-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-178653216-1');
+</script>
+
+	
+	
+	<!-- COLLAPSIBLE-->
+	<style>
+		.collapsible {
+			background-color: #30475e;
+			cursor: pointer;
+			border: none;
+		}
+
+		.collapsible:after {
+			color:#29c7ac;
+			content: '\002B';
+		}
+
+		.active:after {
+			color:#29c7ac;
+			content: "\2212";
+		}
+
+		.content {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+		}
+		iframe {
+			border: none;
+			min-width: 100%;
+            overflow:hidden;
+		}
+    </style>
+	
+	<!-- RESPONSIVE IFRAME -->
+	
+    <style>
+		 #Iframe-Liason-Sheet {
+		   overflow: hidden;
+		   border: none;
+		 }
+		  /* inner wrapper: make responsive */
+		 .responsive-wrapper {
+		   position: relative;
+		   height: 0;  /* gets height from padding-bottom setting */
+		   -webkit-overflow-scrolling: touch;
+           overflow:hidden;
+		 }
+		 .responsive-wrapper iframe {
+		   position: absolute;
+		   top: 0;
+		   left: 0;
+		   width: 100%;
+		   height: 100%;
+		   margin: 0;
+		   padding: 0;
+		   border: none;
+		 }
+		 /* padding-bottom = h/w as a % */
+		 .responsive-wrapper-wxh-550x2000 {
+		   padding-bottom: 56.4%;
+		 }
+		 .iframe-border {
+		   border: 1px solid #000;
+		 }
+		 .center-block-horiz {
+		   margin-left: auto !important;
+		   margin-right: auto !important;
+		 }  		
+    </style>
+
+    <!-- ICON IMAGE IN TABS -->
+    <link href="Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- RESPONSIVE STYLE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- GOOGLE FONTS -->
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>                                    
+        
+    <!-- CSS STYLES -->
+    <link href="Styles/mystyles.css?v=2.0" rel=StyleSheet>
+
+    <style>
+		body, html {
+			font-family: 'Inconsolata', serif;
+			font-size: 20px;
+			height:100%;
+		}
+		.bgimg {
+			background-position: 20% 20%;
+			background-size: cover ;
+			background-image: url("Images/IMG_8728.jpg");
+			min-height: 50%;
+		}
+		@media only screen and (min-width: 300px) {
+			.bgimg {
+				background-position: 30% 20%;
+				background-size: cover;
+				background-image: url("Images/IMG_8728.JPG");
+                min-height: 60%;
+			}
+		}		.menu {
+			display: none;
+		}
+    </style>
+    
+</head>
+    
+<!-- ******************************  BODY OF THE WEB PAGE ************************************* -->
+
+
+<body>
+
+    <!-- Links (sit on top and menu on small screens) -->
+    <div class="w3-bar-item">
+		<div class="w3-row w3-padding w3-color3">
+           	 	<a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-block w3-text-color1 w3-col s1">Home</a>
+			<a href="research.html" class="w3-bar-item w3-button w3-hide-small w3-block w3-text-color1 w3-col s1">Research</a>
+			<a href="cv.html" class="w3-bar-item w3-button w3-hide-small w3-block w3-text-color1 w3-col s1">CV</a>
+			<a href="teaching.html" class="w3-bar-item w3-button w3-hide-small w3-block w3-text-color1 w3-col s1">Teaching</a>
+			<!--a href="media.html" class="w3-bar-item w3-button w3-hide-small w3-block w3-text-color1 w3-col s1">Media</a>-->
+			<a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-block w3-text-color1 w3-col s1">Contact</a>
+			<a href="resources.html" class="w3-bar-item w3-button w3-hide-small w3-block w3-text-color1 w3-col s1">Resources</a>
+			<a href="javascript:void(0)" class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-color3 w3-large"
+			   onclick="navibar()" title="Toggle Navigation Menu">&#9776;</a>
+		</div>
+
+		<!-- Navbar on small screens -->
+		<div id="navibar" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-color3">
+            		<a href="index.html" class="w3-bar-item w3-button w3-block w3-text-color1 w3-col s1">Home</a>
+			<a href="research.html" class="w3-bar-item w3-button w3-block w3-text-color1 w3-col s1">Research</a>
+			<a href="cv.html" class="w3-bar-item w3-button w3-block w3-text-color1 w3-col s1">CV</a>
+			<a href="teaching.html" class="w3-bar-item w3-button w3-block w3-text-color1 w3-col s1">Teaching</a>
+			<!--a href="media.html" class="w3-bar-item w3-button w3-block w3-text-color1 w3-col s1">Media</a>-->
+			<a href="contact.html" class="w3-bar-item w3-button w3-block w3-text-color1 w3-col s1">Contact</a>
+			<a href="resources.html" class="w3-bar-item w3-button w3-block w3-text-color1 w3-col s1">Resources</a>
+		</div>
+    </div>
+    
+    
+    
+	<!-- Header with image -->
+	<header class="bgimg w3-display-container">
+	</header>
+
+	<!-- Add a background color and large text to the whole page -->
+	<div class="w3-color4 w3-medium">
+
+		<!-- About Container -->
+		<div class="w3-container">
+			<div class="w3-content w3-text-color2" style="max-width:700px">
+				<h4 class="w3-left-align w3-margin-top">
+					<span class="w3-wide w3-xxxlarge w3-text-color1">
+						<b>Rubén Pérez-Sanz</b>
+					</span><br>
+					<span class="w3-wide w3-medium w3-text-color2">
+						<b>Ph.D. Candidate in Economics at Universitat Autònoma de Barcelona and Barcelona BGSE</b> <br>
+					</span>
+				</h4>
+				<hr>
+				
+				<p>
+				Welcome to my place, I am a PhD student in the International Doctorate in Economic Analysis <a href="http://idea.uab.es/">
+					(IDEA)</a> programme at Universitat Autònoma de Barcelona (UAB) and the Barcelona Graduate School of Economics
+					<a href="https://www.barcelonagse.eu/"> (BGSE)</a>, currently working under the supervision of 
+					<a href="http://pareto.uab.cat/jllull/"> Joan Llull</a>.
+				</p>
+
+				<p>
+				My research interests are focused on <b> Labour Markets and (Structural) Microeconometrics</b>. Particularly, I am interested in working unions
+					and collective agreements using Social Security data from Spain.
+				</p>
+
+				<p>
+				At present I am researching how <b> colletively agreed minimum wages </b> decided by a minority of agents - probably
+					in their interests - moulds the decision of firms to hire and workers to be up for hiring, which in turn allows
+					to study traditional measures in the labour market such as unemployment and wage distributions.
+				</p>
+				
+
+				
+            </div>
+	   </div>
+	   <!--div class="w3-center w3-padding-32 w3-display-container">
+           <img src="Images/wordcloud.jpg" alt="Research interests" class="w3-image" width="400px" height="328.32px" border="0">
+	   </div-->
+    </div>
+
+</body>
+
+<!-- SCRIPTS AND FUNCTIONS -->
+
+	<!-- NAVIGATION BAR -->
+	<script>
+		function navibar() {
+			var x = document.getElementById("navibar");
+			if (x.className.indexOf("w3-show") == -1) {
+				x.className += " w3-show";
+			} else { 
+				x.className = x.className.replace(" w3-show", "");
+			}
+		}
+	</script>
+
+	<!-- COLLAPSIBLE -->
+
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+		  coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.maxHeight){
+			  content.style.maxHeight = null;
+			} else {
+			  content.style.maxHeight = content.scrollHeight + "px";
+			} 
+		  });
+		}
+	</script>
+
+</html>
