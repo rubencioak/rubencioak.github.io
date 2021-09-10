@@ -108,7 +108,7 @@
 				$sidebar.on('click', 'a', function(event) {
 
 					// >large? Bail.
-						if (breakpoints.active('>large'))
+						if (breakpoints.active('>medium'))
 							return;
 
 					// Vars.
@@ -143,7 +143,7 @@
 				$sidebar.on('click touchend touchstart touchmove', function(event) {
 
 					// >large? Bail.
-						if (breakpoints.active('>large'))
+						if (breakpoints.active('>medium'))
 							return;
 
 					// Prevent propagation.
@@ -155,7 +155,7 @@
 				$body.on('click touchend', function(event) {
 
 					// >large? Bail.
-						if (breakpoints.active('>large'))
+						if (breakpoints.active('>medium'))
 							return;
 
 					// Deactivate.
@@ -181,7 +181,7 @@
 						var x, y;
 
 						// <=large? Bail.
-							if (breakpoints.active('<=large')) {
+							if (breakpoints.active('<=medium')) {
 
 								$sidebar_inner
 									.data('locked', 0)
