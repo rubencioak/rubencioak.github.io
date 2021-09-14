@@ -1511,7 +1511,7 @@ button,
   text-transform: uppercase;
   white-space: nowrap;
   margin-top: -10px;
-  margin-bottom: 50px; }
+  margin-bottom: 0px; }
   input[type="submit"]:hover,
   input[type="reset"]:hover,
   input[type="button"]:hover,
