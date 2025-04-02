@@ -2379,4 +2379,15 @@ button,
     margin-top: 0;
     padding-top: 0; }
 
+/* Remove spacing between list items inside the .lead class */
+ol.lead li {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove spacing from paragraph tags inside list items */
+ol.lead li p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
