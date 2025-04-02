@@ -2390,3 +2390,7 @@ section h2 {
     padding-left: 0 !important;
     text-align: left !important;
 }
+
+#main .inner {
+    padding-left: 2em !important; /* try reducing this if needed */
+}
