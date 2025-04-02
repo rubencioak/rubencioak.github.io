@@ -2391,3 +2391,14 @@ ol.lead li p {
     padding: 0 !important;
 }
 
+/* Reduce space above the header */
+#header {
+    margin-top: 0 !important;
+    padding-top: 0.5em !important; /* adjust as needed */
+}
+
+/* Optional: Also reduce padding in the .inner container */
+#main .inner {
+    padding-top: 1em !important;  /* default might be larger */
+}
+
