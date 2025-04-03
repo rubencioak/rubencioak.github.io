@@ -2402,3 +2402,25 @@ ol.lead li p {
     padding-top: 1em !important;  /* default might be larger */
 }
 
+/* Keep sidebar open on medium to large screens */
+@media screen and (min-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    body:not(.is-menu-visible) #sidebar {
+        display: block !important;
+        transform: none !important;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 10000;
+    }
+
+    body:not(.is-menu-visible) #main {
+        margin-left: 23em; /* Adjust to match sidebar width */
+    }
+}
+
+
