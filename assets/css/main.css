@@ -2380,8 +2380,7 @@ button,
     padding-top: 0; }
 
 .iframeapp {
-	margin:10px;
-	padding:10px
+	margin-top:10px;
 }
 /* Remove spacing between list items inside the .lead class */
 ol.lead li {
