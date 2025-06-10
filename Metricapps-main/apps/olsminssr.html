@@ -28,9 +28,9 @@
 			<div class="controlpanel">
 				<h2>Model Parameters</h2>
 
-				<div class="slider-wrapper" style="width: 600px;">
+				<div class="slider-wrapper" >
 					<div class="slider-label">Intercept (β0):</div>
-					<div class="slider-container" style="width:50%">
+					<div class="slider-container" >
 						<div class="value-bubble">4</div>
 						<input type="range" class="custom-slider" min="-10" max="10" step=".1" value="4" id="intercept">
 						<div class="subticks"></div>
@@ -39,9 +39,9 @@
 					</div>
 				</div>
 
-				<div class="slider-wrapper" style="width: 600px;">
+				<div class="slider-wrapper">
 					<div class="slider-label">Slope (β1):</div>
-					<div class="slider-container" style="width:50%">
+					<div class="slider-container" >
 						<div class="value-bubble">-1</div>
 						<input type="range" class="custom-slider" min="-4" max="4" step=".1" value="-1" id="slope">
 						<div class="subticks"></div>
@@ -50,9 +50,9 @@
 					</div>
 				</div>
 
-				<div class="slider-wrapper" style="width: 600px;">
+				<div class="slider-wrapper" >
 					<div class="slider-label">Error Variance (σ2):</div>
-					<div class="slider-container" style="width:50%">
+					<div class="slider-container">
 						<div class="value-bubble">4</div>
 						<input type="range" class="custom-slider" min="0" max="32" step=".5" value="4" id="variance">
 						<div class="subticks"></div>
@@ -65,9 +65,9 @@
 
 				<h2>Guess Parameters</h2>
 
-				<div class="slider-wrapper" style="width: 600px;">
+				<div class="slider-wrapper" >
 					<div class="slider-label">Guessed Intercept: </div>
-					<div class="slider-container" style="width:50%">
+					<div class="slider-container" >
 						<div class="value-bubble">4</div>
 						<label style="display: none;">Guessed Intercept: <span id="guessInterceptVal">0</span></label>
 						<input type="range" class="custom-slider" min="-10" max="10" step=".1" value="0" id="guessIntercept">
@@ -77,9 +77,9 @@
 					</div>
 				</div>
 
-				<div class="slider-wrapper" style="width: 600px;">
+				<div class="slider-wrapper" >
 					<div class="slider-label">Guessed Slope: </div>
-					<div class="slider-container" style="width:50%">
+					<div class="slider-container" >
 						<div class="value-bubble"></div>
 						<label style="display: none;" >Guessed Slope: <span id="guessSlopeVal">1</span></label>
 						<input type="range" class="custom-slider" min="-4" max="4" step=".1" value="0" id="guessSlope">
@@ -88,11 +88,7 @@
 						<div class="tick-labels"></div>
 					</div>
 				</div>
-
 				
-
-				
-
 				<div id="displaybox" style="margin-top: 1rem; background-color: #333; padding: 0.75rem; border-radius: 8px; color: white; border: 1px solid #aaa;">
 					<strong>Residual Summary</strong></p><br>
 					<p>Sum of residuals, ∑u<sub>i</sub>= <span id="sumResiduals">0</span></p><br>

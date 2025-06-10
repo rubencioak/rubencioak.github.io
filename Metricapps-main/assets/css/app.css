@@ -78,16 +78,17 @@ ol li {
     padding-top: 3rem; /* adjust as needed to fit the bar height */
 }
 .plot-container {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem; /* even smaller horizontal gap between plots */
+    /*gap: 0.25rem;  even smaller horizontal gap between plots */
     justify-content: space-between;
     margin-bottom: 1rem;
 }
 #plot, #betaPlot {
     flex: 1 1 48%;
-    height: 500px;
-    min-width: 300px;
+    height: 400px;
+    aspect-ratio: 1.2/1;
 }
 @media (max-width: 768px) {
     #plot, #betaPlot {
@@ -132,16 +133,16 @@ ol li {
 
 #displaybox {
     background-color: #333;
-    padding: 0.75rem;
+    padding: 10px;
     margin-top: 1rem;
     border-radius: 8px;
     color: white;
-    font-size: 16px;
+    font-size: 12px;
     border: 1px solid #aaa;
 }
 #displaybox p {
     margin: 0;
-    text-indent: 25px;
+    text-indent: 15px;
 }
 
 
@@ -203,7 +204,7 @@ ol li {
 input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
-    min-width: 200px;
+    min-width: 100px;
     height: 8px;
     background: linear-gradient(to right, #f67575 0%, #f67575 var(--percent), #ccc var(--percent), #ccc 100%);
     border-radius: 5px;
@@ -248,7 +249,7 @@ input[type="range"]::-webkit-slider-thumb {
     justify-content: space-between;
     padding-top: 10px;
     width: 97.5%;
-    min-width: 195px;
+    min-width: 97.5px;
     position: absolute;
     pointer-events: none;
     left: 1.5%;
@@ -276,7 +277,7 @@ input[type="range"]::-webkit-slider-thumb {
     top: 0px;
     left: 0;
     width: 97.5%;
-    min-width: 195px;
+    min-width: 97.5px;
     pointer-events: none;
     font-size: 0.9em;
     text-align: center;
