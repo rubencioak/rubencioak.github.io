@@ -30,10 +30,18 @@
             <div id="plot"></div>
             <div id="betaPlot"></div>
         </div>
-        <div class="controlpanel">
-            <label for="sampleSize">Sample Size:<span id="sampleval">50</span><br>
-                <input type="range" id="sampleSize" min="1" max="500" value="50">
-            </label><br>
+        <div class="controlpanel" style="width:300px">
+            <div class="slider-wrapper">
+                <div class="slider-label">Sample size: </div>
+                <div class="slider-container" >
+                    <div class="value-bubble" id="sampleval"></div>
+                    <input type="range" class="custom-slider" min="0" max="500" step="5" value="50" id="sampleSize">
+                    <div class="subticks"></div>
+                    <div class="ticks"></div>
+                    <div class="tick-labels"></div>
+                </div>
+            </div>
+            <br>
             <button id="animateButton">▶ Animate</button>
         </div>
     </div>
@@ -123,5 +131,6 @@
     <script src="../assets/js/popsamp.js"></script>
     <script src="../assets/js/tabs.js"></script>
     <script src="../assets/js/solbutton.js"></script>
+    <script src="../assets/js/sliderbar.js"></script>
 </body>
 </html>

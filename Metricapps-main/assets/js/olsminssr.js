@@ -66,48 +66,48 @@ function updatePlot1(interceptGuess, slopeGuess) {
 }
 
 function updatePlot2(fixedSlope, interceptGuess) {
-  const interceptRange = Array.from({ length: 100 }, (_, i) => -10 + i * 0.2);
-  const ssrValues = interceptRange.map(b0 => calculateSSR(b0, fixedSlope));
+    const interceptRange = Array.from({ length: 100 }, (_, i) => -10 + i * 0.2);
+    const ssrValues = interceptRange.map(b0 => calculateSSR(b0, fixedSlope));
 
-  const minIdx = ssrValues.indexOf(Math.min(...ssrValues));
-  const minIntercept = interceptRange[minIdx];
+    const minIdx = ssrValues.indexOf(Math.min(...ssrValues));
+    const minIntercept = interceptRange[minIdx];
 
-  const trace = {
-    x: interceptRange,
-    y: ssrValues,
-    mode: 'lines',
-    line: { color: '#FF6347' },
-    name: 'SSR vs Intercept'
-  };
+    const trace = {
+        x: interceptRange,
+        y: ssrValues,
+        mode: 'lines',
+        line: { color: '#FF6347' },
+        name: 'SSR vs Intercept'
+    };
 
-  const verticalLine = {
-    x: [interceptGuess, interceptGuess],
-    y: [Math.min(...ssrValues), Math.max(...ssrValues)],
-    mode: 'lines',
-    name: 'Guessed Intercept',
-    line: {
-      color: '#00BA38',
-      dash: 'dot',
-      width: 3
-    },
-    showlegend: false
-  };
+    const verticalLine = {
+        x: [interceptGuess, interceptGuess],
+        y: [Math.min(...ssrValues), Math.max(...ssrValues)],
+        mode: 'lines',
+        name: 'Guessed Intercept',
+        line: {
+        color: '#00BA38',
+        dash: 'dot',
+        width: 3
+        },
+        showlegend: false
+    };
 
-  Plotly.newPlot('plot2', [trace, verticalLine], {
-    title: 'SSR vs Intercept',
-    paper_bgcolor: '#2b2b2b',
-    plot_bgcolor: '#2b2b2b',
-    font: { color: 'white' },
-    xaxis: {
-      title: 'Intercept',
-      zeroline: true,
-      zerolinewidth: 2,
-      zerolinecolor: '#ffffff',
-      range: [Math.min(...interceptRange), Math.max(...interceptRange)],
-      anchor: 'y'
-    },
-    yaxis: { title: 'SSR' }
-  });
+    Plotly.newPlot('plot2', [trace, verticalLine], {
+        title: 'SSR vs Intercept',
+        paper_bgcolor: '#2b2b2b',
+        plot_bgcolor: '#2b2b2b',
+        font: { color: 'white' },
+        xaxis: {
+        title: 'Intercept',
+        zeroline: true,
+        zerolinewidth: 2,
+        zerolinecolor: '#ffffff',
+        range: [Math.min(...interceptRange), Math.max(...interceptRange)],
+        anchor: 'y'
+        },
+        yaxis: { title: 'SSR' }
+    });
 }
 
 function updatePlot3(fixedIntercept, slopeGuess) {
