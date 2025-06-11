@@ -5,31 +5,31 @@
   <title>Multi Custom Sliders</title>
   <style>
     body {
-      background-color: #2e2e2e;
-      color: white;
-      font-family: sans-serif;
-      padding: 40px;
+        background-color: #2e2e2e;
+        color: white;
+        font-family: sans-serif;
+        padding: 40px;
     }
 
     .slider-wrapper {
         margin-bottom: 10px;
         position: relative;
         width: 500px;
-        height: 100px;
+        height: 60px;
         margin-inline: auto;
     }
 
     .slider-label {
-        height: 50px;
+        height: 20px;
         text-align: left;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .slider-container {
         position: absolute;
         width: 100%;
-        height: 50px;
+        height: 40px;
     }
 
     input[type="range"] {
@@ -45,22 +45,21 @@
       -webkit-appearance: none;
       appearance: none;
       height: 20px;
-      width: 20px;
+      width: 25px;
       background: #ddd;
-      border-radius: 50%;
-      cursor: pointer;
-      margin-top: -6px;
-      border: 2px solid #999;
+      border-radius: 25%;
+      cursor: pointer;  
       position: relative;
       z-index: 1;
     }
 
     .value-bubble {
       position: absolute;
-      top: -25px;
+      top: 0px;
       background-color: #f67575;
       padding: 3px 7px;
       width: fit-content;
+      min-width: 15px;
       height: fit-content;
       border-radius: 6px;
       color: white;
@@ -69,6 +68,7 @@
       transform: translateX(-50%);
       pointer-events: none;
       white-space: nowrap;
+      z-index: 2;
     }
 
     .ticks, .subticks {
@@ -83,14 +83,14 @@
 
     .tick-mark {
       width: .2%;
-      height: 12px;
+      height: 9px;
       background: #f67575;
       margin-top: -14px;
     }
 
     .subtick-mark {
       width: .1%;
-      height: 8px;
+      height: 6px;
       background: #f67575;
       opacity: 0.5;
       margin-top: -14px;
@@ -106,7 +106,7 @@
       pointer-events: none;
       font-size: 0.9em;
       text-align: center;
-      margin-top: 30px;
+      margin-top: 25px;
       margin-left: 1.5%;
     }
 
@@ -114,7 +114,7 @@
       transform: translateX(-50%);
       width: max-content;
       position: absolute;
-      font-size: 11px;
+      font-size: 10px;
     }
   </style>
 </head>
@@ -125,7 +125,7 @@
         <div class="slider-label">Select Value 1:</div>
         <div class="slider-container">
             <div class="value-bubble">0</div>
-            <input type="range" class="custom-slider" min="0" max="50" step="5" value="10">
+            <input type="range" class="custom-slider" min="0" max="50" step="1" value="10">
             <div class="subticks"></div>
             <div class="ticks"></div>
             <div class="tick-labels"></div>
@@ -146,63 +146,70 @@
 
   <script>
     function setupSlider(container) {
-      const slider = container.querySelector('.custom-slider');
-      const bubble = container.querySelector('.value-bubble');
-      const tickMarks = container.querySelector('.ticks');
-      const subtickMarks = container.querySelector('.subticks');
-      const tickLabels = container.querySelector('.tick-labels');
+        const slider = container.querySelector('.custom-slider');
+        const bubble = container.querySelector('.value-bubble');
+        const tickMarks = container.querySelector('.ticks');
+        const subtickMarks = container.querySelector('.subticks');
+        const tickLabels = container.querySelector('.tick-labels');
 
-      function updateBubble() {
+    function updateBubble() {
         const val = slider.value;
         const min = +slider.min;
         const max = +slider.max;
-        const percent = ((val - min) / (max - min)) * 100;
+        const percent = (val - min) / (max - min);
 
-        slider.style.setProperty('--percent', `${percent}%`);
+        slider.style.setProperty('--percent', `${percent * 100}%`);
         bubble.textContent = val;
 
-        const bubblePos = slider.offsetWidth * (percent / 100);
-        bubble.style.left = `${bubblePos}px`;
-      }
+        // Accurate thumb position
+        const sliderWidth = slider.offsetWidth;
+        const bubbleWidth = bubble.offsetWidth;
+        const thumbWidth = 25; // match your CSS thumb width
+        const thumbCenter = percent * (sliderWidth - thumbWidth) + thumbWidth / 2;
 
-      function generateTicks() {
-        const min = +slider.min;
-        const max = +slider.max;
-        const numMainTicks = 11;
-        const mainStep = (max - min) / (numMainTicks - 1);
+        // Center bubble on thumb
+        const bubbleLeft = thumbCenter ;
+        bubble.style.left = `${bubbleLeft}px`;
+    }
 
-        tickMarks.innerHTML = '';
-        subtickMarks.innerHTML = '';
-        tickLabels.innerHTML = '';
+        function generateTicks() {
+            const min = +slider.min;
+            const max = +slider.max;
+            const numMainTicks = 11;
+            const mainStep = (max - min) / (numMainTicks - 1);
 
-        // Main ticks and labels
-        for (let i = 0; i < numMainTicks; i++) {
-          const value = Math.round(min + i * mainStep);
+            tickMarks.innerHTML = '';
+            subtickMarks.innerHTML = '';
+            tickLabels.innerHTML = '';
 
-          const mark = document.createElement('div');
-          mark.className = 'tick-mark';
-          tickMarks.appendChild(mark);
+            // Main ticks and labels
+            for (let i = 0; i < numMainTicks; i++) {
+            const value = Math.round(min + i * mainStep);
 
-          const label = document.createElement('span');
-          label.textContent = value;
-          label.style.left = `${(i / (numMainTicks - 1)) * 100}%`;
-          tickLabels.appendChild(label);
+            const mark = document.createElement('div');
+            mark.className = 'tick-mark';
+            tickMarks.appendChild(mark);
+
+            const label = document.createElement('span');
+            label.textContent = value;
+            label.style.left = `${(i / (numMainTicks - 1)) * 100}%`;
+            tickLabels.appendChild(label);
+            }
+
+            // Subticks
+            const numSubticks = 2 * numMainTicks - 1;
+            for (let i = 0; i < numSubticks; i++) {
+            const subtick = document.createElement('div');
+            subtick.className = 'subtick-mark';
+            subtickMarks.appendChild(subtick);
+            }
         }
 
-        // Subticks
-        const numSubticks = 2 * numMainTicks - 1;
-        for (let i = 0; i < numSubticks; i++) {
-          const subtick = document.createElement('div');
-          subtick.className = 'subtick-mark';
-          subtickMarks.appendChild(subtick);
-        }
-      }
+        slider.addEventListener('input', updateBubble);
+        window.addEventListener('resize', updateBubble);
 
-      slider.addEventListener('input', updateBubble);
-      window.addEventListener('resize', updateBubble);
-
-      generateTicks();
-      updateBubble();
+        generateTicks();
+        updateBubble();
     }
 
     // Initialize all sliders on the page
