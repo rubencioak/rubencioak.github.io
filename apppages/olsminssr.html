@@ -57,58 +57,13 @@
 					<!-- Content -->
 					<section>
 						<header class="main">
-							<h1>Apps</h1>
+							<h2>OLS minimisation of SSR: The guts</h2>
 						</header>
-						<div class="posts">
-							<article>
-								<a href="apppages/popsamp.html" class="image"> 
-									<img src="Metricapps-main/pictures/popsamp.png" alt>
-								</a>
-								<h3>Population vs Sample Regression</h3>
-								<p>
-									This app shows the difference between the population and sample
-									regression lines.
-								</p>
-							</article>
-							<article>
-								<a href="apppages/olsopt.html" class="image">
-									<img src="apppages/olsopt.png" alt>
-								</a>
-								<h3>Minimisation of SSR: The guess</h3>
-								<p>
-									In this app, you can play to guess what the line is that minimises
-									the sum of squared residuals.
-								</p>
-							</article>
-							<article>
-								<a href="apppages/olsminssr.html" class="image">
-									<img src="Metricapps-main/pictures/olsminssr.png" alt>
-								</a>
-								<h3>Minimisation of SSR: The guts</h3>
-								<p>
-									This app takes you through the process of minimising the sum of squared residuals.
-								</p>
-							</article>
-							<article>
-								<a href="apppages/betadist.html" class="image">
-									<img src="apppages/betadist.png" alt>
-								</a>
-								<h3>Beta Distributions</h3>
-								<p>
-									This app shows what happens to the distribution when the sample size or the number 
-									of simulations gets arbitrarily large.
-								</p>
-							</article>
-							<article>
-								<a href="apppages/gls.html" class="image">
-									<img src="apppages/gls.png" alt>
-								</a>
-								<h3>Generalised Least Squares</h3>
-								<p>
-									Under heteroskedasticity, what is the gain in precision when we consider GLS
-									instead of OLS?
-								</p>
-							</article>
+						
+						<div class="w3-container">
+							<a href="/apps.html" class="button primary small">Back</a>
+							<iframe width="100%" height="750vh" src="/Metricapps-main/apps/olsminssr.html" class="iframeapp">
+							<p>Your web browser does not support iframes. Please click at the pdf link above.</p></iframe>
 						</div>
 					<section>
 				</div>
@@ -124,12 +79,12 @@
 							<h2>Menu</h2>
 						</header>
 						<ul>
-							<li><a href="index.html">Homepage</a></li>
-							<li><a href="cv.html">Curriculum</a></li>
-							<li><a href="research.html">Research</a></li>
-							<li><a href="teaching.html">Teaching</a></li>
-							<li><a href="apps.html">Applications</a></li>
-							<li><a href="references.html">References</a></li>
+							<li><a href="/index.html">Homepage</a></li>
+							<li><a href="/cv.html">Curriculum</a></li>
+							<li><a href="/research.html">Research</a></li>
+							<li><a href="/teaching.html">Teaching</a></li>
+							<li><a href="/apps.html">Applications</a></li>
+							<li><a href="/references.html">References</a></li>
 						</ul>
 					</nav>
 
@@ -160,13 +115,13 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
 			<script>
-			  fetch("header.html")
+			  fetch("https://rubencioak.github.io/header.html")
 			    .then(response => response.text())
 			    .then(data => {
 			      document.getElementById("include-header").innerHTML = data;

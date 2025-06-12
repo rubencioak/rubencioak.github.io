@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLS SSR Visualizer</title>
+  
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+		/* Header Banner */
+		.tabs::before {
+			content: "Minimization of OLS Residuals.";
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+  </style>
+  <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+
+<body>
+    <div class="tabs">
+        <button class="tab-button active" data-tab="app">Application</button>
+        <button class="tab-button" data-tab="how">How to Use</button>
+    </div>
+  
+	<div class="tab-content" id="app">
+		<div class="container">
+			<div class="controlpanel" style="width: 300px;">
+				<h2>Model Parameters</h2>
+
+				<div class="slider-wrapper" >
+					<div class="slider-label">Intercept (β0):</div>
+					<div class="slider-container" >
+						<div class="value-bubble">4</div>
+						<input type="range" class="custom-slider" min="-10" max="10" step=".1" value="4" id="intercept">
+						<div class="subticks"></div>
+						<div class="ticks"></div>
+						<div class="tick-labels"></div>
+					</div>
+				</div>
+
+				<div class="slider-wrapper">
+					<div class="slider-label">Slope (β1):</div>
+					<div class="slider-container" >
+						<div class="value-bubble">-1</div>
+						<input type="range" class="custom-slider" min="-4" max="4" step=".1" value="-1" id="slope">
+						<div class="subticks"></div>
+						<div class="ticks"></div>
+						<div class="tick-labels"></div>
+					</div>
+				</div>
+
+				<div class="slider-wrapper" >
+					<div class="slider-label">Error Variance (σ2):</div>
+					<div class="slider-container">
+						<div class="value-bubble">4</div>
+						<input type="range" class="custom-slider" min="0" max="32" step=".5" value="4" id="variance">
+						<div class="subticks"></div>
+						<div class="ticks"></div>
+						<div class="tick-labels"></div>
+					</div>
+				</div>
+
+				<button class="button1" id="generateBtn">Generate Data</button>
+
+				<h2>Guess Parameters</h2>
+
+				<div class="slider-wrapper" >
+					<div class="slider-label">Guessed Intercept: </div>
+					<div class="slider-container" >
+						<div class="value-bubble">4</div>
+						<label style="display: none;">Guessed Intercept: <span id="guessInterceptVal">0</span></label>
+						<input type="range" class="custom-slider" min="-10" max="10" step=".1" value="0" id="guessIntercept">
+						<div class="subticks"></div>
+						<div class="ticks"></div>
+						<div class="tick-labels"></div>
+					</div>
+				</div>
+
+				<div class="slider-wrapper" >
+					<div class="slider-label">Guessed Slope: </div>
+					<div class="slider-container" >
+						<div class="value-bubble"></div>
+						<label style="display: none;" >Guessed Slope: <span id="guessSlopeVal">1</span></label>
+						<input type="range" class="custom-slider" min="-4" max="4" step=".1" value="0" id="guessSlope">
+						<div class="subticks"></div>
+						<div class="ticks"></div>
+						<div class="tick-labels"></div>
+					</div>
+				</div>
+				
+				<div id="displaybox" style="margin-top: 1rem; background-color: #333; padding: 0.75rem; border-radius: 8px; color: white; border: 1px solid #aaa;">
+					<strong>Residual Summary</strong></p><br>
+					<p>Sum of residuals, ∑u<sub>i</sub>= <span id="sumResiduals">0</span></p><br>
+					<p>SSR, ∑u<sub>i</sub><sup>2</sup>= <span id="sumSquaredResiduals">0</span></p>
+				</div>
+			</div>
+				
+			<div class="plot-grid">
+				<div id="plot1" class="plot"></div>
+				<div id="plot2" class="plot"></div>
+				<div id="plot3" class="plot"></div>
+				<div id="plot4" class="plot"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="tab-content" id="how" style="display:none;">
+        <div class="how-to">
+			<h2>📘 Title & Purpose</h2>
+			<p>This interactive tool helps you understand how Ordinary Least Squares (OLS) estimation works by visualizing how different parameter guesses affect the Sum of Squared Residuals (SSR).</p>
+
+			<h2>🎯 Goal of this Tool</h2>
+			<p>The aim is to help you grasp that the OLS estimator is the one that minimizes the SSR, i.e., the difference between the observed data and the values predicted by your guessed regression line.</p>
+
+			<h2>🧪 How It Works</h2>
+			<p>First, you generate synthetic data by specifying values for the intercept (β₀), slope (β₁), and error variance (σ²). The app then displays:</p>
+			<ul>
+				<li>The scatterplot of generated data with your guessed regression line</li>
+				<li>Graphs showing how SSR changes as you vary intercept and slope</li>
+				<li>A 3D surface plot of the SSR as a function of both β₀ and β₁</li>
+			</ul>
+
+			<h2>🛠️ Controls</h2>
+			<ol>
+				<li><strong>Model Parameters:</strong> Use sliders to set the intercept (β₀), slope (β₁), and variance (σ²) of the data-generating process. Click "Generate Data" to simulate new observations.</li>
+				<li><strong>Guessed Parameters:</strong> Use the bottom sliders to guess the values of β₀ and β₁. The graphs will update automatically to reflect the SSR associated with your guesses.</li>
+			</ol>
+
+			<h2>🧠 What to Observe</h2>
+			<ul>
+				<li>Notice how the SSR changes as your guessed values get closer to the true parameters used to generate the data.</li>
+				<li>The minimum of the SSR curves (and surface) corresponds to the OLS estimates.</li>
+				<li>Try different variance levels to see how noise affects the estimation accuracy.</li>
+			</ul>
+
+			<h2>🏁 Challenge</h2>
+			<p>Can you find the combination of guessed intercept and slope that minimizes the SSR without knowing the true parameters?</p>
+		</div>
+    </div>
+	<script src="../assets/js/olsminssr.js"></script>
+	<script src="../assets/js/tabs.js"></script>
+	<script src="../assets/js/sliderbar.js"></script>
+
+</body>
+</html>
