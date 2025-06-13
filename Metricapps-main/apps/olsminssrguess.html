@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OLS Estimator Visualizer</title>
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <script defer src="../assets/js/sliderbar.js"></script>
+    <script defer src="../assets/js/tabs.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+    <div class="tabs">
+        <span class="app-title">OLS Estimator Visualizer</span>
+        <button class="tab-button active" onclick="showTab('app')">Application</button>
+        <button class="tab-button" onclick="showTab('how')">How to Use</button>
+    </div>
+
+    <div class="tab-content" id="app">
+        <div class="container">
+            <div class="controlpanel" style="width: 300px">
+                <div class="slider-wrapper">
+                    <div class="slider-label">Number of data points:</div>
+                    <div class="slider-container">
+                        <div class="value-bubble">0</div>
+                        <input type="range" class="custom-slider" id="numPoints" min="0" max="200" step="1" value="100">
+                        <div class="subticks"></div>
+                        <div class="ticks"></div>
+                        <div class="tick-labels"></div>
+                    </div>
+                </div>
+                
+                <button class="button1" onclick="generateData()">Generate New Data</button>
+                
+                <hr>
+
+                <div class="slider-wrapper" style="width: 300px">
+                    <div class="slider-label">Intercept:</div>
+                    <div class="slider-container">
+                        <div class="value-bubble">0</div>
+                        <input type="range" class="custom-slider" id="intercept" min="-10" max="10" step=".01" value="0">
+                        <div class="subticks"></div>
+                        <div class="ticks"></div>
+                        <div class="tick-labels"></div>
+                    </div>
+                </div>
+
+                <div class="slider-wrapper" style="width: 300px">
+                    <div class="slider-label">Slope:</div>
+                    <div class="slider-container">
+                        <div class="value-bubble">0</div>
+                        <input type="range" class="custom-slider" id="slope" min="-5" max="5" step=".01" value="0">
+                        <div class="subticks"></div>
+                        <div class="ticks"></div>
+                        <div class="tick-labels"></div>
+                    </div>
+                </div>
+
+                <label><input type="checkbox" id="showTrueLine"> Show True OLS Line</label><br>
+                <label><input type="checkbox" id="showNormal"> Show Fitted Normal Curve</label>
+
+                <hr>
+                
+                <div id="displaybox">
+                    <p id="sumResiduals">Sum of Residuals (Σe):</p>
+                    <p id="sumSquaredResiduals">Sum of Squared Residuals (SSR):</p>
+                </div>
+            </div>
+
+            <!--<div class="plot-container">
+                <div id="plot" class="plot"></div>
+                <div id="residualPlot" class="plot"></div>
+            </div>-->
+
+            <div class="plot-grid">
+                <div id="plot" class="plot"></div>
+                <div id="residualPlot" class="plot"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="how" style="display:none">
+        <div class="how-to">
+            <h2>📘 Title & Purpose</h2>
+            <p>This tool helps you understand how OLS estimation works by allowing you to experiment with different line parameters and observe their effect on residuals.</p>
+            <h2>🎯 Goal of this Tool</h2>
+            <p>Visualize how changing intercept and slope impacts fit and residuals.</p>
+            <h2>🧪 How It Works</h2>
+            <p>Choose how many data points to generate from a linear model with random errors. Use sliders to guess the best-fitting line and compare it to the true OLS line.</p>
+            <h2>🛠️ Controls</h2>
+            <ul>
+                <li>"Generate New Data" creates new random data.</li>
+                <li>Use sliders to set intercept and slope of your line.</li>
+                <li>Check box to show true regression line.</li>
+            </ul>
+            <h2>🧠 What to Observe</h2>
+            <p>Observe how residual lines change with your adjustments, and how residuals distribute.</p>
+            <h2>🌟 Challenge</h2>
+            <p>Can you find the combination of intercept and slope that minimizes SSR?</p>
+        </div>
+    </div>
+
+
+    <script src="../assets/js/olsminssrguess.js"></script>
+    <script src="../assets/js/tabs.js"></script>
+    <script src="../assets/js/sliderbar.js"></script>
+</body>
+</html>
