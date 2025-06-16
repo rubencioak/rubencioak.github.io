@@ -97,6 +97,7 @@ function updatePlot() {
         yaxis: { title: 'Y' },
         legend: {x: 0.05, y: 0.95, bgcolor: 'rgba(0,0,0,0)'}
     });
+
     Plotly.newPlot('residualPlot', [residualHist, ...normalCurve], {
         title: 'Histograme of residuals',
         paper_bgcolor: '#2b2b2b',
@@ -114,13 +115,13 @@ function updatePlot() {
     });
 }
 
-function showTab(tabId) {
+/*function showTab(tabId) {
     document.getElementById('app').style.display = tabId === 'app' ? 'flex' : 'none';
     document.getElementById('how').style.display = tabId === 'how' ? 'block' : 'none';
     document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
 }
-
+*/
 document.querySelectorAll('input[type="range"], input[type="checkbox"]').forEach(el => el.addEventListener('input', updatePlot));
 
 generateData();

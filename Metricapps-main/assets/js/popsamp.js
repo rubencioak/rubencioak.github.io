@@ -1,4 +1,3 @@
-
 const n = 500;
 let x = Array.from({length: n}, () => Math.random() * 10);
 let y = x.map(val => 3 + 2 * val + randn_bm() * 4);
