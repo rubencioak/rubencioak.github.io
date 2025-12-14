@@ -35,6 +35,7 @@
 
 		gtag('config', 'UA-162349307-2');
 		</script>
+		<script src="assets/js/include.js"></script>
 
 	</head>
 
@@ -110,46 +111,17 @@
 								</p>
 							</article>
 						</div>
-					<section>
 				</div>
 			</div>
 
-			<!-- Sidebar -->
+						<!-- Sidebar -->
 			<div id="sidebar">
 				<div class="inner">
-
 					<!-- Menu -->
-					<nav id="menu">
-						<header class="major">
-							<h2>Menu</h2>
-						</header>
-						<ul>
-							<li><a href="index.html">Homepage</a></li>
-							<li><a href="cv.html">Curriculum</a></li>
-							<li><a href="research.html">Research</a></li>
-							<li><a href="teaching.html">Teaching</a></li>
-							<li><a href="apps.html">Applications</a></li>
-							<li><a href="references.html">References</a></li>
-						</ul>
-					</nav>
-
+					<div w3-include-html = "sidebar_menu.html"></div>
 					<!-- Contact Details -->
 					<section>
-						<header class="major">
-							<h2>Contact</h2>
-						</header>
-
-						<ul class="contact">
-							<li class="icon solid fa-envelope"><a href="mailto:ruben.perezs@uam.es">ruben.perezs@uam.es</a></li>
-							<!-- <li class="icon solid fa-phone">(000) 000-0000</li> -->
-							<li class="icon solid fa-building">
-							Análisis Económico: Economía Cuantitativa <br />
-							Facultad de Ciencias Económicas y Empresariales <br />
-							Universidad Autónoma de Madrid <br />
-							España </li>
-						</ul>
-
-
+					<div w3-include-html = "sidebar_contact.html"></div>
 					<!-- Footer -->
 					</section>
 					<footer id="footer">
@@ -160,19 +132,13 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-			  fetch("header.html")
-			    .then(response => response.text())
-			    .then(data => {
-			      document.getElementById("include-header").innerHTML = data;
-			    });
-			</script>
-
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/load-header.js"></script>
+		<script> includeHTML();</script>
 
 	</body>
 </html>
